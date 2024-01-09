@@ -11,10 +11,22 @@
   "contextTitleViewExPage": {
     "message": "ぶいちゃふぁぼりすCEを表示する"
   },
-  "extensionTextTabMain": {
+  "etTabMain": {
     "message": "ぶいちゃふぁぼりすCE"
   },
-  "extensionTextTabSetting": {
+  "etTabSetting": {
     "message": "設定"
+  },
+  "etAppMainButton": {
+    "message": "読み込む"
+  },
+  "etNoData": {
+    "message": "データが入力されてません。"
+  },
+  "etJSONParseError": {
+    "message": "データの読み取りに失敗しました。"
+  },
+  "etJSONSaveFailed": {
+    "message": "データの保存に失敗しました。"
   }
 }
