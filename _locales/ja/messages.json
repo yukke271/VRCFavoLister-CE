@@ -10,5 +10,11 @@
   },
   "contextTitleViewExPage": {
     "message": "ぶいちゃふぁぼりすCEを表示する"
+  },
+  "extensionTextTabMain": {
+    "message": "ぶいちゃふぁぼりすCE"
+  },
+  "extensionTextTabSetting": {
+    "message": "設定"
   }
 }
