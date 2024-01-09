@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "ぶいちゃふぁぼりすCE"
+  },
+  "appDesc": {
+    "message": "VRChatのFavoliteに入れたワールドやアバターを整理するためのツールである「ぶいちゃふぁぼりす」のChrome拡張版です。"
+  },
+  "appAction": {
+    "message": "ぶいちゃふぁぼりすCEを表示する"
+  },
+  "contextTextViewExPage": {
+    "message": "ぶいちゃふぁぼりすCEを表示する"
+  }
+}
