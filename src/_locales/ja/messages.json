@@ -20,6 +20,9 @@
   "etAppMainButton": {
     "message": "読み込む"
   },
+  "etAppExportJSONButton": {
+    "message": "JSON形式でダウンロード"
+  },
   "etNoData": {
     "message": "データが入力されてません。"
   },
