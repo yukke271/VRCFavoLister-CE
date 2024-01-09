@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   init()
   document.getElementById("appMainButton").addEventListener("click", readJSON)
+  document.getElementById("appExportJSONButton").addEventListener("click", exportJSON)
 })
 
 function init() {
@@ -113,4 +114,37 @@ function setList(jsonList) {
     li.textContent = json.name
     document.getElementById("appMainList").appendChild(li)
   })
+}
+
+function exportJSON() {
+  // 保存されているデータを読み込む
+  chrome.storage.local.get(["yukkeExtension_VRCFavoListerCE"], function (result) {
+    if (chrome.runtime.lastError) {
+      alert(chrome.i18n.getMessage("etJSONLoadFailed"))
+      console.log(chrome.runtime.lastError)
+      console.log(result.yukkeExtension_VRCFavoListerCE)
+      return
+    }
+
+    // データをダウンロードする
+    const jsonText = JSON.stringify(result.yukkeExtension_VRCFavoListerCE)
+    const blob = new Blob([jsonText], { type: "application/json" })
+    blobToDownload(blob, "VRCFavoListerCE.json")
+
+    // 通知
+    console.log(jsonText)
+  })
+}
+
+function blobToDownload(blob, filename) {
+  url = window.URL.createObjectURL(blob)
+  const a = document.createElement("a")
+  a.href = url
+  a.download = filename
+  a.click()
+
+  setTimeout(() => {
+    window.URL.revokeObjectURL(url)
+    a.remove()
+  }, 0)
 }
