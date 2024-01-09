@@ -28,6 +28,6 @@
       "16": "images/icon16.png"
     },
     "default_title": "__MSG_appAction__",
-    "default_popup": "popup.html"
+    "default_popup": "./popup/popup.html"
   }
 }

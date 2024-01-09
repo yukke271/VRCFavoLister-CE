@@ -17,7 +17,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
   chrome.contextMenus.onClicked.addListener(function (info, tab) {
     switch (info.menuItemId) {
       case "ViewExPage":
-        chrome.tabs.create({ url: "extension.html" })
+        chrome.tabs.create({ url: "./extension/extension.html" })
         break
     }
   })
