@@ -1,6 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
+  init()
   document.getElementById("appMainButton").addEventListener("click", readJSON)
 })
+
+function init() {
+  // 保存されているデータを読み込む
+  chrome.storage.local.get(["yukkeExtension_VRCFavoListerCE"], function (result) {
+    if (chrome.runtime.lastError) {
+      alert(chrome.i18n.getMessage("etJSONLoadFailed"))
+      console.log(chrome.runtime.lastError)
+      console.log(result.yukkeExtension_VRCFavoListerCE)
+      return
+    }
+
+    // データを画面に配置する
+    setList(result.yukkeExtension_VRCFavoListerCE)
+  })
+}
 
 // 入力されたJSON形式のデータを読み込む
 function readJSON() {
@@ -43,13 +59,58 @@ function readJSON() {
     })
   })
 
+  // リストを画面に配置する
+  setList(jsonList)
+
   // データを保存する
-  chrome.storage.local.set({ yukkeExtension_VRCFavoListerCE: jsonList }, function () {
-    if (chrome.runtime.lastError) {
-      alert(chrome.i18n.getMessage("etJSONSaveFailed"))
-    }
-  })
+  saveJSON(jsonList)
 
   // 通知
   console.log(jsonList)
+}
+
+// json配列を既存のデータとの重複を排除して保存する
+function saveJSON(jsonList) {
+  // 保存されているデータを読み込む
+  chrome.storage.local.get(["yukkeExtension_VRCFavoListerCE"], function (result) {
+    if (chrome.runtime.lastError) {
+      alert(chrome.i18n.getMessage("etJSONLoadFailed"))
+      console.log(chrome.runtime.lastError)
+      console.log(result.yukkeExtension_VRCFavoListerCE)
+      return
+    }
+
+    // 重複を排除する
+    result.yukkeExtension_VRCFavoListerCE.forEach((json) => {
+      if (!jsonList.some((item) => item.id === json.id)) {
+        jsonList.push(json)
+      }
+    })
+
+    // 保存する
+    chrome.storage.local.set({ yukkeExtension_VRCFavoListerCE: jsonList }, function () {
+      if (chrome.runtime.lastError) {
+        alert(chrome.i18n.getMessage("etJSONSaveFailed"))
+        return
+      }
+
+      // 保存したら入力欄をクリアする
+      document.getElementById("appMainInput").value = ""
+
+      alert(chrome.i18n.getMessage("etJSONSaveSuccess"))
+    })
+  })
+}
+
+// json配列をリストで画面に配置する
+function setList(jsonList) {
+  // リストをクリアする
+  document.getElementById("appMainList").innerHTML = ""
+
+  // リストを作成する
+  jsonList.forEach((json) => {
+    const li = document.createElement("li")
+    li.textContent = json.name
+    document.getElementById("appMainList").appendChild(li)
+  })
 }

@@ -28,5 +28,11 @@
   },
   "etJSONSaveFailed": {
     "message": "データの保存に失敗しました。"
+  },
+  "etJSONLoadFailed": {
+    "message": "データの読み込みに失敗しました。"
+  },
+  "etJSONSaveSuccess": {
+    "message": "データの保存に成功しました。"
   }
 }
