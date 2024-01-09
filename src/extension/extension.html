@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title id="appName"></title>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest" />
+  </head>
+  <body>
+    <nav class="tabs is-full">
+      <a id="appMainTab" href="#appMain" class="active"></a>
+      <a id="appSettingTab" href="#appSetting"></a>
+    </nav>
+
+    <div id="appMain">
+      <textarea id="appMainInput" rows="10" cols="50"></textarea>
+      <button id="appMainButton"></button>
+      <button id="appExportJSONButton"></button>
+
+      <div id="appMainList"></div>
+    </div>
+
+    <div id="appSetting">
+      <p>setting</p>
+    </div>
+
+    <script src="locale.js"></script>
+    <script src="style.js"></script>
+    <script src="feature.js"></script>
+  </body>
+</html>

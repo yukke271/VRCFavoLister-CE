@@ -1,0 +1,41 @@
+{
+  "appName": {
+    "message": "ぶいちゃふぁぼりすCE"
+  },
+  "appDesc": {
+    "message": "VRChatのFavoliteに入れたワールドやアバターを整理するためのツールである「ぶいちゃふぁぼりす」のChrome拡張版です。"
+  },
+  "appAction": {
+    "message": "ぶいちゃふぁぼりすCEを表示する"
+  },
+  "contextTitleViewExPage": {
+    "message": "ぶいちゃふぁぼりすCEを表示する"
+  },
+  "etTabMain": {
+    "message": "ぶいちゃふぁぼりすCE"
+  },
+  "etTabSetting": {
+    "message": "設定"
+  },
+  "etAppMainButton": {
+    "message": "読み込む"
+  },
+  "etAppExportJSONButton": {
+    "message": "JSON形式でダウンロード"
+  },
+  "etNoData": {
+    "message": "データが入力されてません。"
+  },
+  "etJSONParseError": {
+    "message": "データの読み取りに失敗しました。"
+  },
+  "etJSONSaveFailed": {
+    "message": "データの保存に失敗しました。"
+  },
+  "etJSONLoadFailed": {
+    "message": "データの読み込みに失敗しました。"
+  },
+  "etJSONSaveSuccess": {
+    "message": "データの保存に成功しました。"
+  }
+}
